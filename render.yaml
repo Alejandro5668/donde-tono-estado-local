@@ -1,0 +1,11 @@
+services:
+  - type: web
+    name: donde-tono-estado-local
+    runtime: python
+    plan: free
+    buildCommand: pip install -r requirements.txt
+    startCommand: python servidor.py
+    healthCheckPath: /salud
+    envVars:
+      - key: MET_TOKEN
+        sync: false
